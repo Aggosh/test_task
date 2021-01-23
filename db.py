@@ -13,7 +13,7 @@ class DataBase:
 
     def __init__(self):
         """Connects to a database using data from env.
-        Returns:
+        Return:
             None
         """
         self.connector = mysql.connector.connect(
@@ -45,7 +45,7 @@ class DataBase:
 
     def disconnect(self):
         """Closes the database connection.
-        Returns:
+        Return:
             None
         """
         self.connector.close()
@@ -73,11 +73,11 @@ class DataBase:
             address (str): Restaurant address.
             city (str): Restaurant city.
             zip_code (int): ZIP code of the restaurant.
-            latitude (float): longitude.
+            latitude (float): latitude.
             longitude (float): longitude.
             yelp_rating (float): Yelp rating.
             google_rating (float): Google rating.
-        Returns:
+        Return:
             None
         """
         try:
@@ -109,7 +109,7 @@ class DataBase:
 
     def crete_table(self):
         """Creates tables "restaurant", "tag" and "tag_restaurant" in the database if there are none..
-        Returns:
+        Return:
             None
         """
         create_restaurant_table = "CREATE TABLE IF NOT EXISTS restaurant (id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY, restaurant_name VARCHAR(50) NOT NULL UNIQUE, telephone VARCHAR(20), website VARCHAR(100), address VARCHAR(100), city VARCHAR(20), zip_code INT(10), latitude float4, longitude float4, yelp_rating float4, google_rating float4);"
